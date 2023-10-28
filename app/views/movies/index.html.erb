@@ -1,0 +1,13 @@
+<h1>Movies List</h1>
+
+<ul>
+  <% @movies.each do |movie| %>
+    <li>
+      <strong>Name:</strong> <%= movie.name %><br>
+      <strong>Synopsis:</strong> <%= movie.synopsis %><br>
+      <strong>Director:</strong> <%= movie.director %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Add New Movie', new_movie_path %>

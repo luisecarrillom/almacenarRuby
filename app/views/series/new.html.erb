@@ -1,0 +1,37 @@
+<h1>Add New Series</h1>
+
+<%= form_with model: @serie, local: true do |form| %>
+  <% if @serie.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@serie.errors.count, "error") %> prohibited this series from being saved:</h2>
+
+      <ul>
+      <% @serie.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :synopsis %>
+    <%= form.text_area :synopsis %>
+  </div>
+
+  <div class="field">
+    <%= form.label :director %>
+    <%= form.text_field :director %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Back to Series List', series_index_path %>
+
